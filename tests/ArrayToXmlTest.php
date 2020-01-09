@@ -416,4 +416,13 @@ class ArrayToXmlTest extends TestCase
         $this->assertTrue($dom->formatOutput);
         $this->assertEquals('1234567', $dom->version);
     }
+
+    /** @test */
+    public function it_can_handle_null_values()
+    {
+        $this->assertMatchesXmlSnapshot(ArrayToXml::convert([
+            'user' => null,
+        ]));
+    }
+
 }
