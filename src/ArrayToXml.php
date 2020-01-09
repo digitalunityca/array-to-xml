@@ -101,6 +101,10 @@ class ArrayToXml
     {
         $sequential = $this->isArrayAllKeySequential($value);
 
+        if ($value === null) {
+            return;
+        }
+        
         if (! is_array($value)) {
             $value = htmlspecialchars($value);
 
